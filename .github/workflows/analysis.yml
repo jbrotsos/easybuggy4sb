@@ -48,5 +48,5 @@ jobs:
         github_token: ${{secrets.GH_TOKEN}}  # To be stored in GitHub Secrets.
         incremental: false
         scanners: sast, sca
-        bug_tracker: GitHub
-        params: --cx-flow.zip-exclude=".github/" --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }}
+        bug_tracker: Jira
+        params: --cx-flow.zip-exclude=".github/" --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --config=cx.config  --jira.url=${{secrets.JIRA_URL}} --jira.username=${{secrets.JIRA_USER}} --jira.token=${{secrets.JIRA_TOKEN}}
