@@ -45,7 +45,7 @@ jobs:
         scanners: sast
         bug_tracker: GITHUBPULL
         params: --checkmarx.scan-preset=High and Medium --cxflow.enabled-vulnerability-scanners=sast --checkmarx.incremental=false --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --merge-id=${{ github.event.number }}
-    # Upload SARIF report for CodeQL / Security Alerts PRocessing
+    # Upload SARIF report for CodeQL / Security Alerts Processing
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
       with:
